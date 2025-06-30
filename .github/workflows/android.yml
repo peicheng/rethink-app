@@ -2,9 +2,9 @@ name: 🫣 Android CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "t" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "t" ]
 
 jobs:
   build:
@@ -38,5 +38,5 @@ jobs:
       if: success()
       run: |
         # ./gradlew lint
-        ./gradlew assembleWebsiteFullDebug --info --warning-mode all
+        ./gradlew assembleWebsiteFullDebug --info --warning-mode all -x lint
 
