@@ -40,5 +40,12 @@ jobs:
         #
         # ./gradlew lint
         # ./gradlew assembleWebsiteFullDebug --info --warning-mode all -x lint
-        ./gradlew assembleWebsiteFullDebug -x lint --info
+        ./gradlew assembleWebsiteFullDebug -x lint 
 
+    - name: Upload APK To Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: apk
+        path: |
+          # app/build/outputs/apk/release/*
+          app/build/outputs/apk/*
